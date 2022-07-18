@@ -1,0 +1,33 @@
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let item of symptoms; index as i">
+            <div class="card card-1"  >
+              <input type="checkbox" 
+              (change)="changeHandler(item, $event)"
+              [checked]="">
+              <span>{{item.symptom}}</span>            
+              <div class="row align-items-start" >
+                <div class="col-sm-4" *ngFor= "let item of item.components">
+                  <button type="button" class="btn btn-success btn">
+                    {{item.name}}  
+                  </button>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12"> 
+        <!-- <button type="submit" (click)="updateChart()" class="btn btn-primary center">Enviar sintomas</button> -->
+      </div>
+      </div>
+      <div class="noHover">
+        <canvas id="canvas"  height="320">{{ chart }}</canvas>
+      </div>
+      </div>
+
+
+
+     
+      
